@@ -1,12 +1,18 @@
 import json, requests
 
-headers = {
-    "Content-Type": "application/json",
-    "Tracking-Api-Key": "v83qnksa-b42c-vnfw-f68f-gh4sw90lx5kl"
-}
+print("Page buku dari 1 - 10!")
 
-track = requests.get('https://api.trackingmore.com/v4/trackings/get', headers=headers)
+nBuku = int(input("Page buku:"))
 
-track = track.json()
+if nBuku > 10:
+  nBuku = 10
+  print("Page diatur otomatis ke 10!")
+elif nBuku < 1:
+  nBuku = 1
+  print("Page diatur otomatis ke 1!")
 
-track['data']
+bukuN = requests.get('https://gutendex.com/books/?page='+str(nBuku))
+
+bukuN = bukuN.json()
+
+bukuN
