@@ -23,6 +23,11 @@ class RakBuku:
           print("\tNama:", bio['name'])
           print("\tLahir:", bio['birth_year'])
           print("\tWafat:", bio['death_year'])
+          
+  def subject(self):
+    for data in bukuN['results']:
+      if data['id'] == self.id:
+        print("Kategori:", data['subjects'])
 
 
 user = str(input("Masukkan Username Anda: "))
