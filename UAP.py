@@ -1,4 +1,4 @@
-import json, requests
+import json, requests, random
 
 # Fungsi pemilihan page library
 def pilihan(nBuku):
@@ -13,7 +13,7 @@ class RakBuku:
   def judul(self):
     for data in bukuN['results']:
       if data['id'] == self.id:
-        print("Judul:", data['title'])
+        print("\nJudul:", data['title'])
   
   def author(self):
     for data in bukuN['results']:
@@ -23,11 +23,17 @@ class RakBuku:
           print("\tNama:", bio['name'])
           print("\tLahir:", bio['birth_year'])
           print("\tWafat:", bio['death_year'])
-          
+
   def subject(self):
     for data in bukuN['results']:
       if data['id'] == self.id:
         print("Kategori:", data['subjects'])
+  
+  def memory(self):
+    print("Jika ingin mencari buku ini Anda bisa mencari di Rak Buku No."+str(nBuku), "bagian")
+    for data in bukuN['results']:
+      if data['id'] == self.id:
+        print(data['bookshelves'])
 
 
 user = str(input("Masukkan Username Anda: "))
