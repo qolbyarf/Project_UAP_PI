@@ -243,7 +243,6 @@ if saranKK == 'Y' or saranKK == 'y':
   saran = open('KritikSaranPengguna.txt', 'a')
   tulis = str(input("Apa kritik atau saran Anda?\n"))
   saran.write(tulis+'\n')
-  # saran.write(tulis)
   print("\n***Kritik dan saran berhasil ditambahkan***\n")
   saran = open('KritikSaranPengguna.txt','r')
   print(saran.read())
