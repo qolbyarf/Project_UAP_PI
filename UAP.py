@@ -240,7 +240,7 @@ while z < 3:
 saranKK = str(input("\nApakah Anda ingin menambahkan kritik atau saran pada program ini? Y/N: "))
 
 if saranKK == 'Y' or saranKK == 'y':
-  saran = open('KritikSaranPengguna.txt', 'w')
+  saran = open('KritikSaranPengguna.txt', 'a')
   tulis = str(input("Apa kritik atau saran Anda?\n"))
   saran.write(tulis+'\n')
   # saran.write(tulis)
